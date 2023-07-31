@@ -36,5 +36,17 @@ class Robot {
     }
 }
 
+class Humanoid {
+    constructor(name, abilities, catchphrase) {
+        Robot.apply(this, [name, abilities]);
+        this.catchphrase = catchphrase;
+    }
+
+    announce() {
+        Robot.prototype.announce.apply(this);
+        console.log(" > " + this.catchphrase + " <");
+    };
+}
+
 module.exports.Humanoid = Humanoid;
 module.exports.Robot = Robot;
