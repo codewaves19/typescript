@@ -36,14 +36,14 @@ class Robot {
     }
 }
 
-class Humanoid {
+class Humanoid extends Robot {
     constructor(name, abilities, catchphrase) {
-        Robot.apply(this, [name, abilities]);
+        super(name, abilities);
         this.catchphrase = catchphrase;
     }
 
     announce() {
-        Robot.prototype.announce.apply(this);
+        super.announce();
         console.log(" > " + this.catchphrase + " <");
     };
 }
